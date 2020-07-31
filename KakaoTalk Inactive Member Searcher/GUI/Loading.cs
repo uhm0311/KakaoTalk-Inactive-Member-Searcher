@@ -44,13 +44,20 @@ namespace KIMS.GUI
 
                 foreach (Talk talk in Parser.Talks)
                 {
-                    if (!lastTalk.ContainsKey(talk.Name))
+                    if (!lastTalk.ContainsKey(talk.Name) && talk.State != TalkState.Leave)
                     {
                         lastTalk.Add(talk.Name, talk.Time);
                     }
-                    else if (lastTalk[talk.Name] < talk.Time)
+                    else
                     {
-                        lastTalk[talk.Name] = talk.Time;
+                        if (talk.State == TalkState.Leave)
+                        {
+                            lastTalk.Remove(talk.Name);
+                        } 
+                        else if (lastTalk[talk.Name] < talk.Time)
+                        {
+                            lastTalk[talk.Name] = talk.Time;
+                        }
                     }
                 }
 
