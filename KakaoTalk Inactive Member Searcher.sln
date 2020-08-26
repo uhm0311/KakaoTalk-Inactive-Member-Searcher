@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KakaoTalk Inactive Member Searcher", "KakaoTalk Inactive Member Searcher\KakaoTalk Inactive Member Searcher.csproj", "{AF854E6D-E583-43F7-827E-89D40B4ED539}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kakaotalk-analyzer", "KakaoTalk-Analyzer2\kakaotalk-analyzer\kakaotalk-analyzer.csproj", "{C47732DF-6BDD-44FF-A959-6F7CCB07F143}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AF854E6D-E583-43F7-827E-89D40B4ED539}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF854E6D-E583-43F7-827E-89D40B4ED539}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF854E6D-E583-43F7-827E-89D40B4ED539}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C47732DF-6BDD-44FF-A959-6F7CCB07F143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C47732DF-6BDD-44FF-A959-6F7CCB07F143}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C47732DF-6BDD-44FF-A959-6F7CCB07F143}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C47732DF-6BDD-44FF-A959-6F7CCB07F143}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
