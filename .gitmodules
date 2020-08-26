@@ -1,0 +1,4 @@
+[submodule "KakaoTalk-Analyzer2"]
+	path = KakaoTalk-Analyzer2
+	url = https://github.com/uhm0311/KakaoTalk-Analyzer2.git
+	branch = develop
