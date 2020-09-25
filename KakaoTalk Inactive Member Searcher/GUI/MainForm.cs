@@ -6,19 +6,19 @@ namespace KIMS.GUI
 {
     public partial class MainForm : Form
     {
-        private readonly Dictionary<string, DateTime> InactiveMembers;
+        private readonly Dictionary<string, Tuple<DateTime, int>> Talks;
 
-        public MainForm(Dictionary<string, DateTime> InactiveMembers)
+        public MainForm(Dictionary<string, Tuple<DateTime, int>> Talks)
         {
-            this.InactiveMembers = InactiveMembers;
+            this.Talks = Talks;
             InitializeComponent();
         }
 
         private void FormLoad(object sender, EventArgs e)
         {
-            foreach (KeyValuePair<string, DateTime> pair in InactiveMembers)
+            foreach (KeyValuePair<string, Tuple<DateTime, int>> pair in Talks)
             {
-                Result.Rows.Add(pair.Key, pair.Value.ToString());
+                Result.Rows.Add(pair.Key, pair.Value.Item1, pair.Value.Item2);
             }
 
             Result.Sort(Result.Columns[0], System.ComponentModel.ListSortDirection.Ascending);

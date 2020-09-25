@@ -9,10 +9,7 @@ namespace KIMS.GUI
 {
     public partial class Loading : Form
     {
-        private readonly DateTime CriteriaDateTime;
-
-        private readonly KakaoTalkParser Parser;
-        private readonly OnLoadedListener Listener;
+        private readonly ThreadStart threadStart;
 
         protected override CreateParams CreateParams
         {
@@ -25,48 +22,20 @@ namespace KIMS.GUI
             }
         }
 
-        public Loading(DateTime CriteriaDateTime, KakaoTalkParser Parser, OnLoadedListener Listener)
+        public Loading(ThreadStart threadStart)
         {
-            this.CriteriaDateTime = CriteriaDateTime;
-
-            this.Parser = Parser;
-            this.Listener = Listener;
+            this.threadStart = threadStart;
 
             InitializeComponent();
         }
 
         private void FormLoad(object sender, System.EventArgs e)
         {
-            new Thread(new ThreadStart(() =>
+            new Thread(() =>
             {
-                Dictionary<string, DateTime> lastTalk = new Dictionary<string, DateTime>();
-                Parser.ParseStart();
-
-                foreach (Talk talk in Parser.Talks)
-                {
-                    if (!lastTalk.ContainsKey(talk.Name) && talk.State != TalkState.Leave)
-                    {
-                        lastTalk.Add(talk.Name, talk.Time);
-                    }
-                    else
-                    {
-                        if (talk.State == TalkState.Leave)
-                        {
-                            lastTalk.Remove(talk.Name);
-                        } 
-                        else if (lastTalk[talk.Name] < talk.Time)
-                        {
-                            lastTalk[talk.Name] = talk.Time;
-                        }
-                    }
-                }
-
-                Invoke(new MethodInvoker(() =>
-                {
-                    Listener((from item in lastTalk where item.Value < CriteriaDateTime select item).ToDictionary(x => x.Key, x => x.Value));
-                    Close();
-                }));
-            }))
+                threadStart.Invoke();
+                Invoke(new MethodInvoker(() => Close()));
+            })
             { IsBackground = true }.Start();
         }
 

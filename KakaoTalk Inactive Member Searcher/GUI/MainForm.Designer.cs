@@ -31,6 +31,7 @@
             this.Result = new System.Windows.Forms.DataGridView();
             this.닉네임 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Last = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Result)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,7 +42,8 @@
             this.Result.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Result.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.닉네임,
-            this.Last});
+            this.Last,
+            this.Count});
             this.Result.Location = new System.Drawing.Point(12, 12);
             this.Result.Name = "Result";
             this.Result.ReadOnly = true;
@@ -51,21 +53,29 @@
             // 
             // 닉네임
             // 
-            this.닉네임.FillWeight = 368F;
+            this.닉네임.FillWeight = 244F;
             this.닉네임.Frozen = true;
             this.닉네임.HeaderText = "Nickname";
             this.닉네임.Name = "닉네임";
             this.닉네임.ReadOnly = true;
-            this.닉네임.Width = 368;
+            this.닉네임.Width = 244;
             // 
             // Last
             // 
-            this.Last.FillWeight = 368F;
+            this.Last.FillWeight = 244F;
             this.Last.Frozen = true;
             this.Last.HeaderText = "Last";
             this.Last.Name = "Last";
             this.Last.ReadOnly = true;
-            this.Last.Width = 368;
+            this.Last.Width = 244;
+            // 
+            // Count
+            // 
+            this.Count.FillWeight = 244F;
+            this.Count.HeaderText = "Count";
+            this.Count.Name = "Count";
+            this.Count.ReadOnly = true;
+            this.Count.Width = 244;
             // 
             // MainForm
             // 
@@ -88,5 +98,6 @@
         private System.Windows.Forms.DataGridView Result;
         private System.Windows.Forms.DataGridViewTextBoxColumn 닉네임;
         private System.Windows.Forms.DataGridViewTextBoxColumn Last;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Count;
     }
 }
