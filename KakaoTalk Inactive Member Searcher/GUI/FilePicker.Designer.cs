@@ -30,8 +30,9 @@
         {
             this.PathFinder = new System.Windows.Forms.Button();
             this.CriteriaDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.Next = new System.Windows.Forms.Button();
+            this.Inactive = new System.Windows.Forms.Button();
             this.Path = new System.Windows.Forms.TextBox();
+            this.Active = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // PathFinder
@@ -53,16 +54,16 @@
             this.CriteriaDateTimePicker.TabIndex = 2;
             this.CriteriaDateTimePicker.ValueChanged += new System.EventHandler(this.CriteriaDateTimePickerValueChanged);
             // 
-            // Next
+            // Inactive
             // 
-            this.Next.Enabled = false;
-            this.Next.Location = new System.Drawing.Point(12, 66);
-            this.Next.Name = "Next";
-            this.Next.Size = new System.Drawing.Size(156, 23);
-            this.Next.TabIndex = 3;
-            this.Next.Text = "확인 (&O)";
-            this.Next.UseVisualStyleBackColor = true;
-            this.Next.Click += new System.EventHandler(this.NextClick);
+            this.Inactive.Enabled = false;
+            this.Inactive.Location = new System.Drawing.Point(12, 66);
+            this.Inactive.Name = "Inactive";
+            this.Inactive.Size = new System.Drawing.Size(75, 23);
+            this.Inactive.TabIndex = 3;
+            this.Inactive.Text = "잠수 찾기";
+            this.Inactive.UseVisualStyleBackColor = true;
+            this.Inactive.Click += new System.EventHandler(this.IactiveClick);
             // 
             // Path
             // 
@@ -73,12 +74,23 @@
             this.Path.Size = new System.Drawing.Size(75, 21);
             this.Path.TabIndex = 0;
             // 
+            // Active
+            // 
+            this.Active.Location = new System.Drawing.Point(93, 66);
+            this.Active.Name = "Active";
+            this.Active.Size = new System.Drawing.Size(75, 23);
+            this.Active.TabIndex = 4;
+            this.Active.Text = "활동 찾기";
+            this.Active.UseVisualStyleBackColor = true;
+            this.Active.Click += new System.EventHandler(this.ActiveClick);
+            // 
             // FilePicker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(179, 99);
-            this.Controls.Add(this.Next);
+            this.Controls.Add(this.Active);
+            this.Controls.Add(this.Inactive);
             this.Controls.Add(this.CriteriaDateTimePicker);
             this.Controls.Add(this.PathFinder);
             this.Controls.Add(this.Path);
@@ -95,8 +107,9 @@
         #endregion
         private System.Windows.Forms.Button PathFinder;
         private System.Windows.Forms.DateTimePicker CriteriaDateTimePicker;
-        private System.Windows.Forms.Button Next;
+        private System.Windows.Forms.Button Inactive;
         private System.Windows.Forms.TextBox Path;
+        private System.Windows.Forms.Button Active;
     }
 }
 
