@@ -75,9 +75,12 @@ namespace KIMS.GUI
 
                 foreach (Talk talk in Parser.Talks)
                 {
-                    if (!talks.ContainsKey(talk.Name) && talk.State != TalkState.Leave)
+                    if (!talks.ContainsKey(talk.Name))
                     {
-                        talks.Add(talk.Name, new Tuple<DateTime, int>(talk.Time, 0));
+                        if (talk.State == TalkState.Enter)
+                        {
+                            talks.Add(talk.Name, new Tuple<DateTime, int>(talk.Time, 0));
+                        }
                     }
                     else if (Comparator1(talk.Time))
                     {
