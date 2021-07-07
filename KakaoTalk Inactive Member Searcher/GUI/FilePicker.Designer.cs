@@ -63,7 +63,7 @@
             this.Inactive.TabIndex = 3;
             this.Inactive.Text = "잠수 찾기";
             this.Inactive.UseVisualStyleBackColor = true;
-            this.Inactive.Click += new System.EventHandler(this.IactiveClick);
+            this.Inactive.Click += new System.EventHandler(this.InactiveClick);
             // 
             // Path
             // 

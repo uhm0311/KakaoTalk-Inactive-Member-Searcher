@@ -20,7 +20,6 @@ namespace KIMS.GUI
             OpenFileDialog dialog = new OpenFileDialog
             {
                 Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*",
-                FilterIndex = 2,
                 RestoreDirectory = true,
             };
 
@@ -54,7 +53,7 @@ namespace KIMS.GUI
             }
         }
 
-        private void IactiveClick(object sender, EventArgs e)
+        private void InactiveClick(object sender, EventArgs e)
         {
             ShowLoadingDialog((_) => true, (time) => time < CriteriaDateTimePicker.Value.Date);
         }
